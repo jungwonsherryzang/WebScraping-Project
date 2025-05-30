@@ -18,6 +18,8 @@ html_page = requests.get(url).text
 data = BeautifulSoup(html_page, 'html.parser')
 
 #scraping information
+#checked HTML file from the url -> all the rows under the table are "tr"
+#                                  the data in each row is in "td" object
 tables = data.find_all('tbody')
 rows = tables[0].find_all('tr')
 
